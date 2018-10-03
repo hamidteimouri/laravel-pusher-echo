@@ -10,6 +10,7 @@ class CommentController extends Controller
 {
     public function index(Post $post)
     {
+        //dd($post);
         return response()->json($post->comments()->with('user')->latest()->get());
     }
 
