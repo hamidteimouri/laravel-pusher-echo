@@ -13917,7 +13917,6 @@ window.Vue = __webpack_require__(38);
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_echo__);
-
 window._ = __webpack_require__(14);
 window.Popper = __webpack_require__(3).default;
 
@@ -13967,11 +13966,13 @@ if (token) {
 
 window.Pusher = __webpack_require__(37);
 
+//key: process.env.MIX_PUSHER_APP_KEY,
+//cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
   broadcaster: 'pusher',
-  key: "1dfe6f7e0344a65abf8a",
-  cluster: "ap1",
-  encrypted: true
+  key: "fda03a3726fa68676aea",
+  cluster: "mt1",
+  encrypted: false
 });
 
 /***/ }),

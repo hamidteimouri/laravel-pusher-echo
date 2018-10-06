@@ -43,7 +43,7 @@
 
 
 @section('scripts')
-    <script>
+    <script type="text/javascript">
         const app = new Vue({
             el: "#app",
             data: {
@@ -53,13 +53,13 @@
                 user:{!! auth()->check() ? auth()->user()->toJson() : 'null' !!}
             },
             mounted() {
-                this.getComments()
+                this.getComments();
+                this.listen();
             },
             methods: {
                 getComments() {
                     axios.get(`/api/posts/${this.post.id}/comments`).then((response) => {
                         this.comments = response.data;
-                        console.log(response);
                     }).catch((err) => {
                         console.log("we have error: ");
                         console.log(err);
@@ -77,6 +77,12 @@
                         console.log("we have error: ");
                         console.log(err);
                     })
+                },
+                listen() {
+                    window.Echo.channel('post.' + this.post.id)
+                        .listen('.comment-available', (comment) => {
+                            this.comments.unshift(comment);
+                        });
                 }
             }
         });
