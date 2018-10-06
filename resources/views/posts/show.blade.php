@@ -33,10 +33,8 @@
                 </a>
             </div>
             <div class="media-body">
-                <h4 class="media-heading">@{{ comment.user.name }} said</h4>
-                <p>
-                    @{{ comment.body }}
-                </p>
+                <h4 class="media-heading" style="margin-left: 10px">@{{ comment.user.name }} said</h4>
+                <p style="padding-left: 10px">@{{ comment.body }}</p>
                 <span style="color: #aaa;">on @{{ comment.created_at }}</span>
             </div>
         </div>
