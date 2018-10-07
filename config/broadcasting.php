@@ -37,8 +37,7 @@ return [
             'app_id' => env('PUSHER_APP_ID'),
             'options' => [
                 'cluster' => env('PUSHER_APP_CLUSTER'),
-                'encrypted' => false,
-                # https://stackoverflow.com/questions/47990690/laravel-pusher-illuminate-broadcasting-broadcastexception-no-message
+                'encrypted' => false,  # https://stackoverflow.com/questions/47990690/laravel-pusher-illuminate-broadcasting-broadcastexception-no-message
             ],
         ],
 

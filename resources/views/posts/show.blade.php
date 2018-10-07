@@ -79,7 +79,7 @@
                     })
                 },
                 listen() {
-                    window.Echo.channel('post.' + this.post.id)
+                    window.Echo.private('post.' + this.post.id)
                         .listen('.comment-available', (comment) => {
                             this.comments.unshift(comment);
                         });
